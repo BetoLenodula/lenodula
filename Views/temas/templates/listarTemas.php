@@ -211,8 +211,7 @@
 		<?php	
 			elseif(empty($callback_datos)):
 		?>
-				<br><br><i class="material-icons img_empty">filter_none</i>
-			<p class="advice">No hay temas individuales!!</p>
+			<br><br><i class="material-icons img_empty">filter_none</i>
 		<?php
 			endif;
 		?>	
