@@ -1,0 +1,104 @@
+div#contCalif{
+	font-family: Roboto;
+	width: 90%;
+	margin-left: 5%;
+	position: relative;
+	border:1px solid #F0F0F0;
+	box-sizing: border-box;
+}
+div#headCalif{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+div#headCalif div:first-child{
+	width: 20%;
+}
+div#headCalif div:last-child{
+	width: 80%;
+	border-left: 1px solid #EFEFEF;
+}
+div.divhcal{
+	color:#10ADC3;
+	text-align: center;
+	float: left;
+}
+div#bodyCalif{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 0 8px 0;
+}
+div#bodyCalif a{
+	color:#2387CA;
+}
+div.dpiccalusr{
+	margin:15px 0 15px 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+div.dpiccalusr:hover{
+	background-color: #F8F8F8;
+}
+div.dpicusr{
+	border-right: 1px solid #EFEFEF;
+	font-size: 12px;
+	text-align: center;
+	width: 20%;
+}
+div.dpicusr div{
+	width: 35px;
+	height: 35px;
+	margin:auto;
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+}
+div.dcalusr{
+	width: 80%;
+}
+div.dcalusr div{
+	text-align: center;
+	width: 33.33333%;
+	float: left;
+}
+div.dcalusr div i{
+	font-size: 19px;
+}
+div.dcalusr div:nth-child(1) i{
+	color:#FFDA8D;
+}
+div.dcalusr div:nth-child(2) i{
+	color:#699;
+}
+div.dcalusr div:nth-child(3) i{
+	color:#888;
+}
+div.dcalusr div span{
+	font-size: 10px;
+}
+
+div.dcalusr b{
+	vertical-align: middle;
+	font-size: 11px;
+	font-weight: bolder;
+}
+
+.red{
+	color:red;
+}
+.yel{
+	color:orange;
+}
+.grn{
+	color:green;
+}
+
+@media only screen and (max-width: 650px){
+	div#contCalif{
+		width: 99%;
+		margin-left: 0.5%;
+	}
+}

@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'logo';
+  src:  url('fonts/lenodula.eot?1wjnd3');
+  src:  url('fonts/lenodula.eot?1wjnd3#iefix') format('embedded-opentype'),
+    url('fonts/lenodula.ttf?1wjnd3') format('truetype'),
+    url('fonts/lenodula.woff?1wjnd3') format('woff'),
+    url('fonts/lenodula.svg?1wjnd3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'logo' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.logo_big{
+  font-size: 90px;
+}
+
+.logo_medium{
+  font-size: 50px;
+}
+.logo_small{
+  font-size: 35px;
+}
+
+.icon-logo:before {
+  content: "\e900";
+}

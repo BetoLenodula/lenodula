@@ -1,0 +1,263 @@
+section{
+	width:100%;
+}
+
+div#centralSection{
+	width:100%;
+	margin-left: 0;
+}
+
+aside{
+	position: static;
+	width:100%;
+	margin-top: 50px;
+	height:auto;
+	clear:both;
+}
+
+div.msg_delay{
+	width: 40%;
+	left: 30%;
+}
+
+aside #explorerCursos{
+	width:70%;
+	margin-left: 15%; 
+}
+div#showUser{
+	width: 22%;
+}
+
+div.body_notice blockquote iframe{
+	height: 190px;
+}
+
+
+i.img_empty{
+	font-size: 12vw;
+}
+nav{
+	width:78%;
+	height:50px;
+	margin-left:22%;
+}
+
+nav div.notificon, nav div.menuicon, nav div.notificon_disabled{
+	width:7.5%;
+	position: relative;
+}
+
+
+nav div.navicon{
+	width:23.333%;
+}
+
+div.box, form.box{
+	width:90%;
+	left:5%;
+}
+
+form.frm, div.infoProfile{
+	width:98%;
+	margin-left: 1%;
+}
+
+form input.inptxtalp, div.infoProfile div{
+	font-size: 20px;
+}
+
+
+form input[type=date]{
+	width:52%;
+}
+
+.barf, .bar{
+	display: none;
+}
+
+
+div#contentMiPerfil{
+	width:98%;
+	padding: 15px;
+	left: 1%;
+}
+
+div#userNameperfil{
+	font-size: 35px;
+}
+
+div#divPuntuacionPerfil, div#curCompleted{
+	width:70%;
+	margin:30px 0 30px 15%;
+}
+
+#tableThemes{
+	width:98%;
+	margin-left: 1%;
+}
+
+#tableThemes tr td{
+	width: 32.66%;
+}
+
+div#listUsers{
+	width:100%;
+	margin-left: 0;
+}
+
+div#searching_dats{
+	width:100%;
+	margin-left: 0;
+}
+
+div.minDivGrupo{
+	width:44%;
+	margin-left: 4%;
+}
+
+
+div.divActionUser{
+	text-align: right;
+}
+
+div#descriptionGroup{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#iniciar_sesion{
+	margin-bottom: 20px;
+}
+div#headGroup, div#actionsGrupo, div#slide_div_grupos, div.manager_group, div#div_bans{
+	width: 90%;
+	margin-left: 5%;
+}
+
+
+#baneos{
+	margin-left: 5%;
+}
+
+
+p#head_name_group{
+	font-size: 4vw;
+}
+
+
+div.list_tema{
+	width:99%;
+	margin: 5px 0 5px 0.5%;
+}
+
+
+div.pictListUser{
+	width:60px;
+}
+
+div.pictListUser div{
+	height: 60px;
+}
+
+div.divInfoUser{
+	width: (75% - 60px);
+}
+
+.float_btn{
+	right:10px;
+}
+.float_btn_top{
+	display: block;
+}
+
+div#body_article{
+	width: 90%;
+	margin-left: 5%;
+}
+
+
+div.qualify{
+	margin-top: 2px;
+}
+div.qualify button{
+	margin-top: 7px;
+}
+div#other_grps{
+	width: 96%;
+}
+div#recent_activity{
+	width: 90%;
+	margin-left: 5%;
+}
+div.up_recent{
+	width: 96%;
+}
+
+div#main_activity{
+	width: 100%;
+	margin-left: 0;
+}
+
+div#feed{
+	width: 100%;
+	margin-left: 0;
+   column-count: 2;
+   column-gap: 15px;
+   column-fill: balance;
+}
+div.new_notice{
+	column-break-inside: avoid;
+	width: 97%;
+	display: inline-block;
+	margin: 15px 0 0 1.5%;
+}
+div.body_notice{
+	width: 95%;
+	padding: 5px 5px 5px 2.5%;
+}
+
+div.new_notice p span{
+	font-size: 13px;
+}
+
+div.head_notice i.big_ih_notice{
+	font-size: 12vw;
+	margin-left: -6vw;
+}
+div.head_notice i.min_ih_notice{
+	font-size: 8vw;
+}
+div.headMinGrupo i.i_min_back_grp{
+	font-size: 8.8vw;
+}
+div.headMinGrupo i.i_min_min_back_grp{
+	font-size: 4.5vw;
+}
+div.contentResps{
+		width: 98%;
+		margin-left: 1%;
+}
+
+
+aside{
+	display: none;
+}
+
+
+div#main_msgs{
+	width: 50%;
+	right: 2%;
+}
+
+
+div.div_inf_avance{
+	text-align: center;
+}
+
+div.div_avance div p, div.div_avance div i{
+	float: none;
+}
+
+
+div#some_activity{
+	display: none;
+}
