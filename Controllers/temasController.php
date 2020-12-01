@@ -50,11 +50,17 @@
 		}
 
 		public function borrar(){
-			$this->tema->set('id', trim(strip_tags($_POST['idte'])));
-			$this->tema->set('titulo', trim(strip_tags($_POST['tite'])));
+			if(isset($_SESSION['userSesion']) && $_SESSION['userSesion']['rol'] == 'Tutor'){
+				$this->tema->set('id', trim(strip_tags($_POST['idte'])));
+				$this->tema->set('titulo', trim(strip_tags($_POST['tite'])));
+				$this->tema->set('id_usuario', trim(strip_tags($_POST['idus'])));
 
-			$return = $this->tema->delete();
-			echo $return;
+				$return = $this->tema->delete();
+				echo $return;
+			}
+			else{
+				header("Location:".URL);
+			}
 		}
 
 		public function paginar_temas($arg){

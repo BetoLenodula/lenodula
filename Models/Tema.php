@@ -135,7 +135,7 @@
 		}
 
 		public function delete(){
-			$sql = "DELETE FROM temas_materia_curso WHERE id = '$this->id' AND titulo = '$this->titulo';";
+			$sql = "DELETE FROM temas_materia_curso WHERE id = '$this->id' AND titulo = '$this->titulo' AND id_usuario = '$this->id_usuario';";
 			$return = $this->con->returnQuery($sql);
 			if($return && $this->con->getAffectedRows() == 1){
 				$return = 'true';

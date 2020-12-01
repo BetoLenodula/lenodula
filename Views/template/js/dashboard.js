@@ -153,14 +153,18 @@
 	function get_temas(idm, elm){
 		var edit = false;
 		var memb = false;
+		var sesl = false;
 		exprId = /^[0-9a-z]{15,16}$/;
 
-		if(getParameterByName('like') != '' && exprId.test(getParameterByName('like')) && (id_session != id_prop_curso)){
-			id_session = getParameterByName('like');
+		if(getParameterByName('like') != '' && exprId.test(getParameterByName('like'))){
+			sesl = getParameterByName('like');
 		}
-		else if(getParameterByName('like') != '' && exprId.test(getParameterByName('like')) && (id_session == id_prop_curso)){
-			id_session = getParameterByName('like');
-			edit = true;	
+
+		if(sesl != false && exprId.test(sesl)){
+			sesl = sesl;
+		}
+		else{
+			sesl = id_session;
 		}
 
 		if(id_session && (id_session == id_prop_curso)){
@@ -176,7 +180,7 @@
 				url: '/temas/listar/'+null,
 				type: 'get',
 				dataType: 'json',
-				data: {get_type: 'ajax', idmod: idm, idses: id_session}
+				data: {get_type: 'ajax', idmod: idm, idses: sesl}
 		}).done(function(dats){
 				var str = "";
 				$.each(dats, function(i){
@@ -408,7 +412,7 @@
 			$.ajax({
 				url: '/temas/borrar',
 				type:'post',
-				data: {post_type: 'ajax', idte: idt, tite: tit}
+				data: {post_type: 'ajax', idte: idt, tite: tit, idus: id_session}
 			}).done(function(info){
 				if(info == 'true'){
 					$(me).parents('.list_tema').fadeOut(700);
