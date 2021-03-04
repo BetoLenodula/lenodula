@@ -91,7 +91,13 @@
  				endif;
  			 ?>
 
- 			<a id="fbshare" target="_blank" href="http://www.facebook.com/sharer.php?u=<?= urlencode(URL.$_GET['url']);  ?>"><button class="btn btnPublish">compartir&nbsp;<img src="/Views/template/images/fbwhite.png" width="12"></button></a> 
+ 			<button class="btn btnPublish sh" id="share">
+ 				compartir <i class="material-icons ico sh">share</i>
+ 				<div class="lnks_share">
+ 					<a href="http://www.facebook.com/sharer.php?u=<?= urlencode(URL.$_GET['url']); ?>" target="_blank">Facebook</a>
+ 					<a href="https://api.whatsapp.com/send?text=Únete a mi grupo en Lenodula <?= urlencode(URL.$_GET['url']);  ?>" target="_blank">Whatsapp</a>
+ 				</div>
+ 			</button> 
  		</div>
  		
  		<div class="manager_group">

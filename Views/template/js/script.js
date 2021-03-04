@@ -555,6 +555,11 @@ $(document).ready(function(){
 
 	})
 
+	$('#frmEditPerfil div.contSelect').change(function(){
+		msgAlert('¡MOMENTO!<br>Ten en cuenta esto si eres Tutor, y cambias a Rol de Usuario: algunas acciones como Admin. ya NO se ejecutarán!!');
+		cerrar_alert_focus();
+	})
+
 	$('#slide_cursos').click(function(){
 		$(this).siblings().removeAttr('class');
 		$(this).attr('class', 'actual_slide');
@@ -974,6 +979,10 @@ $(document).ready(function(){
 	 		$('.del_ban_user').hide();
 	 		$('.topic_option').hide();
 		} 
+		bts = $(evt.target).attr('class');
+		if(bts != 'btn btnPublish sh' && bts != 'material-icons ico sh' && bts != 'lnks_share'){
+			$('.lnks_share').hide();
+		}
 	 });
 
 	var sendingreso = false;
@@ -1264,6 +1273,14 @@ $(document).ready(function(){
 
 	})
 
+	$('#share').click(function(){
+		if(! $(this).find('div').is(':visible')){
+			$(this).find('div').show();
+		}
+		else{
+			$(this).find('div').hide();	
+		}
+	})
 
 	var sendcurso = false;
 	$('#frmNuevoCurso').submit(function(){

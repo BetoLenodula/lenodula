@@ -65,7 +65,7 @@
 		}
 
 		public function edit(){ 
-			$sql = "UPDATE usuarios SET nombre_user = '$this->nombre_user', nombres = '$this->nombres', apellidos = '$this->apellidos' WHERE identificador_unico = '$this->identificador_unico';";
+			$sql = "UPDATE usuarios SET nombre_user = '$this->nombre_user', nombres = '$this->nombres', apellidos = '$this->apellidos', rol = '$this->rol' WHERE identificador_unico = '$this->identificador_unico';";
 			$res = $this->con->returnQuery($sql);
 			return $res;
 		}

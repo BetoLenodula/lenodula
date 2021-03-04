@@ -245,12 +245,18 @@
 					}
 				}
 
+				if(($_POST['rol'] != 'Tutor') && ($_POST['rol'] != 'Usuario')){
+					return "Elige un rol correcto en el sistema!!";
+				}
+
 				$this->usuario->set('nombre_user', strip_tags(trim($_POST['nombre_user'])));
 				$this->usuario->set('nombres', strip_tags(trim($_POST['nombres'])));
 				$this->usuario->set('apellidos', strip_tags(trim($_POST['apellidos'])));
+				$this->usuario->set('rol', strip_tags(trim($_POST['rol'])));
 				$res = $this->usuario->edit();
 
 				if($res){
+					$_SESSION['userSesion']['rol'] = strip_tags(trim($_POST['rol']));
 					header("Location:".URL."usuarios/perfil/my");
 				}
 
