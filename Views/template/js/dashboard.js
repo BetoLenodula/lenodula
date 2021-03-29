@@ -304,7 +304,7 @@
 		pd = $(me).find('.pd').val();
 		
 		var dc = Base64.decode(pd);
-		dc = $.parseJSON(dc);
+		dc = JSON.parse(dc);
 
 		var idc = dc['idc'];
 		var pre = dc['pr'];
@@ -391,7 +391,7 @@
 		me = $(this);
 		pd = $(this).parent('div').attr('id');
 		dats = Base64.decode(pd);
-		dats = $.parseJSON(dats);
+		dats = JSON.parse(dats);
 
 		var exprNomTem = /^[0-9a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,100}$/;
 		var exprInt    = /^\d*$/;

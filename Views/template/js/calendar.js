@@ -52,7 +52,7 @@
 		pd = $('#post_data_event').val();
 
 		pdat = Base64.decode(pd);
-		d = $.parseJSON(pdat);
+		d = JSON.parse(pdat);
 		fec = d['dat'];
 		suf = d['sub'];
 
@@ -194,7 +194,7 @@
 			pd = $('#post_data_event').val();
 
 			pdat = Base64.decode(pd);
-			d = $.parseJSON(pdat);
+			d = JSON.parse(pdat);
 			fec = d['dat'];
 			suf = d['sub'];
 		}

@@ -709,7 +709,7 @@ $(document).ready(function(){
             var exprInt  = /^\d*$/;
 
             var dr = Base64.decode(post_resp);
-            dr = $.parseJSON(dr);
+            dr = JSON.parse(dr);
 
             var idu = dr['idu'];
             var idt = dr['idt'];
@@ -790,7 +790,7 @@ $(document).ready(function(){
             var cresp = $('#theme_article_section').html();
 
             var dr = Base64.decode(post_resp);
-            dr = $.parseJSON(dr);
+            dr = JSON.parse(dr);
 
             var idu = dr['idu'];
             var idt = dr['idt'];
@@ -920,7 +920,7 @@ $(document).ready(function(){
 
 
             var dt = Base64.decode(post_tema);
-            dt = $.parseJSON(dt);
+            dt = JSON.parse(dt);
 
             var idt = dt['id'];
             var tit = dt['ti'];

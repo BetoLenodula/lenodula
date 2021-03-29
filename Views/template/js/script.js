@@ -240,7 +240,7 @@
 		var exprInt    = /^\d*$/;
 
 		var dt = Base64.decode(dat);
-		dt = $.parseJSON(dt);
+		dt = JSON.parse(dt);
 
 		var idt = dt['id'];
 		var tit = dt['ti'];
@@ -393,7 +393,7 @@ $(document).ready(function(){
 		 $('#post_dats_t').val(val);
 
 		 var nc = Base64.decode(val);
-		 nc = $.parseJSON(nc);
+		 nc = JSON.parse(nc);
 		$('#frmTema').hide();
 		$('#frmTema').fadeIn(350);
 		$('#lblFrmCurso').html("Publicar un <b>[Tema Individual]</b> en el curso: (<b> <i class='icon-logo'></i> "+nc['nc']+"</b>)");
@@ -405,7 +405,7 @@ $(document).ready(function(){
 		 $('#post_dats_un').val(val);
 
 		 var nc = Base64.decode(val);
-		 nc = $.parseJSON(nc);
+		 nc = JSON.parse(nc);
 		 
 		 $('#frmTema').hide();
 		 $('#frmUnidad').show();
@@ -943,7 +943,7 @@ $(document).ready(function(){
     	me = $(this).parents('li');
     	idc = $(me).attr('id');
     	idc = Base64.decode(idc);
-    	dats = $.parseJSON(idc);
+    	dats = JSON.parse(idc);
 
     	idcu = dats['id'];
     	nomc = dats['nc'];
@@ -1287,7 +1287,7 @@ $(document).ready(function(){
 		var nombre_curso = $('#nombre_materia_curso').val();
 		var pd = $('#post_dats').val();
 		pd = Base64.decode(pd);
-		pd = $.parseJSON(pd);
+		pd = JSON.parse(pd);
 
 		var id_usuario = pd['id'];
 		var nombre_grupo = pd['ng'];
@@ -1355,7 +1355,7 @@ $(document).ready(function(){
 		var perm = $('#permiso_archivo').val();
 
 		var dt = Base64.decode(dats);
-		dt = $.parseJSON(dt);
+		dt = JSON.parse(dt);
 
 		var idt = dt['id'];
 		var nco = dt['nc'];
@@ -1429,7 +1429,7 @@ $(document).ready(function(){
 
 
 		var dt = Base64.decode(dats);
-		dt = $.parseJSON(dt);
+		dt = JSON.parse(dt);
 
 		var idt = dt['id'];
 		var nco = dt['nc'];
@@ -1502,7 +1502,7 @@ $(document).ready(function(){
 					var exprInt    = /^\d*$/;
 
 					var dt = Base64.decode(sel);
-					dt = $.parseJSON(dt);
+					dt = JSON.parse(dt);
 
 					var idg = dt['id'];
 					var pos = dt['pos'];

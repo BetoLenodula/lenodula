@@ -10,9 +10,9 @@
 		}
 
  		idc = idc.split('_');
-		idc = idc[1].replace("-", "=");
+		idc = idc[1].replace(/-/g, "=");
 		idc = Base64.decode(idc);
-		idc = $.parseJSON(idc);
+		idc = JSON.parse(idc);
 		return idc;
 	}
 
@@ -271,7 +271,7 @@
 		reply = resp.html();
 
 		pr = Base64.decode(post_reply);
-		pr = $.parseJSON(pr);
+		pr = JSON.parse(pr);
 
 		var idc = pr['id'];
 		var idu = pr['idu']
@@ -343,7 +343,7 @@
 		var post_reply = datsFrm[1].value;
 
 		pr = Base64.decode(post_reply);
-		pr = $.parseJSON(pr);
+		pr = JSON.parse(pr);
 
 		var idc = pr['id'];
 		var idu = pr['idu']
@@ -397,7 +397,7 @@
 		var comentario = $('#comentario').val();
 		var pd = $('#post_dats_foro').val();
 		pd = Base64.decode(pd);
-		pd = $.parseJSON(pd);
+		pd = JSON.parse(pd);
 
 		var id_usuario = pd['idu'];
 		var nombre_grupo = pd['ng'];
@@ -706,7 +706,7 @@
 		var post_reply_r = datsFrm[1].value;
 
 		pr = Base64.decode(post_reply_r);
-		pr = $.parseJSON(pr);
+		pr = JSON.parse(pr);
 
 		var idr = pr['id'];
 		var idu = pr['idu'];
@@ -764,7 +764,7 @@
 		reply_r = resp.html();
 
 		pr = Base64.decode(post_reply_r);
-		pr = $.parseJSON(pr);
+		pr = JSON.parse(pr);
 
 		var idr = pr['id'];
 		var idu = pr['idu'];

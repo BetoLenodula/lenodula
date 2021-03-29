@@ -67,7 +67,7 @@
         </div>
       </section>
     </div>
-    <button id="again" onclick="again()">OTRA VEZ</button><br><br><br><br>
+    <button id="again" onclick="again()">OTRA</button><br><br><br><br>
     <script>
     	var palabras = [<?= $words; ?>];
 
