@@ -51,6 +51,8 @@
 
 		public function ayuda(){}
 
+		public function pprivacidad(){}
+
 		public function ingresar(){
 			if(!isset($_SESSION['userSesion'])){
 				if($_POST){
