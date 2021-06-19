@@ -22,7 +22,7 @@
 		<br><br>
 		<div id="main_logo"><i class="icon-logo logo_medium"></i>Len<i class="icon-logo"></i>dula</div><br>
 		<span class="lema">Piensa, Organiza, Comparte</span><br><br>
-		
+		<p class="quote quote1">👉 Para ser <b>Tutor</b> y poder crear grupos deber registrarte con un <u>email</u>, en cambio tu cuenta de facebook es para ingresar como usuario de los grupos.👈 👀</p><br>    
 		<img src="/Views/template/images/init.png" alt="" width="80%" style="margin-left:10%;">
 		<p class="quote quote2">
 			Si por alguna razón <u>no recibes el correo</u> en la bandeja de entrada, <u>revisa la bandeja de correo no deseado o SPAM.</u>

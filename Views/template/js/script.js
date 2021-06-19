@@ -659,6 +659,7 @@ $(document).ready(function(){
 							data: {get_type: 'ajax', limit: limemb}
 						}).done(function(dat){
 							str = "";
+							back2 = "";
 							$.each(dat, function(i){
 								if(dat[i].ids == 'FB'){
 									back = "background-image: url(https://graph.facebook.com/"+dat[i].idu+"/picture?type=small);"
@@ -672,13 +673,13 @@ $(document).ready(function(){
 								if(dat[i].fot != 'none' && dat[i].ids != 'FB'){
 									back2 = "<img src='/Views/template/images/pictures/"+dat[i].fot+"' alt='"+dat[i].nom+"_usuario'>";
 								}
-								if(dat[i].enl == 1){
+								if(dat[i].enl == "1"){
 									ol = "online";
 								}
 								else{
 									ol = "outline";
 								}
-								if(dat[i].sta == 1){
+								if(dat[i].sta == "0"){
 									bl = " banned";
 								}
 								else{

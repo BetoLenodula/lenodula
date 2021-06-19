@@ -21,10 +21,10 @@
 			<h1>como crear un examen</h1>
 		</div>
 		<br><br>
-			<p class="quote quote1" align="center">
-				Para diseñar correctamente un examen o cuestionario, es necesario colocar cada pregunta
-				o reactivo dentro de un bloque de pregunta y opere correctamente, dando click en: <i class="material-icons" style="color:#666">live_help</i>, y nos crea un bloque de pregunta color verde (<i class="material-icons" style="color:#44FFAC">&#xE8FD;</i>) como se ve en
-				la imagen, donde ya podremos insertar todo tipo de contenido y selectores.<br><br>
+			<p class="quote quote1" align="left">
+				Para diseñar correctamente un examen o cuestionario:<br> En primer lugar debemos marcar la palomita ☑️ para que el sistema tome como examen tu publicación.<br><br> Enseguida es necesario colocar cada pregunta
+				o reactivo dentro de un bloque de pregunta para que opere correctamente, dando click en: <i class="material-icons" style="color:#666">live_help</i> nos crea un bloque de pregunta color verde (<i class="material-icons" style="color:#44FFAC">&#xE8FD;</i>) (como se ve en
+				la imagen de abajo); ahí podremos insertar todo tipo de contenido y selectores 🔲 🔽.<br><br> En cada selector o casillas de opción es necesario marcar las respuestas correctas ✅ , las cuales serán  completamente invisibles al usuario, donde podrá contestar y enviar sus respuestas.<br> El sistema autocalificará el examen tomando como base tus respuestas como Tutor, y te enviará una notificación 🔔 por cada usuario que conteste el examen (pierde cuidado!, solamente podrá ser contestado una sola vez cada examen) 💆.<br><br>
 				<img src="/Views/template/images/exam.png" alt="Lenodula_exam" width="60%">			
 			</p><br>
 	</article>
