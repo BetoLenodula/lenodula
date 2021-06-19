@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 11, 2020 at 12:46 PM
--- Server version: 5.7.32-0ubuntu0.18.04.1
+-- Generation Time: Jun 19, 2021 at 05:07 PM
+-- Server version: 5.7.34-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -92,6 +92,7 @@ CREATE TABLE `eventos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
+
 --
 -- Table structure for table `grupos`
 --
@@ -432,7 +433,7 @@ CREATE TABLE `word_finds` (
 --
 DROP TABLE IF EXISTS `full_notificaciones_comentarios`;
 
-CREATE VIEW `full_notificaciones_comentarios`  AS  select `respuestas_comentarios_grupo`.`id` AS `id`,`usuarios`.`foto` AS `foto`,`usuarios`.`nombre_user` AS `nombre_user`,`comentarios_grupo`.`id_usuario` AS `id_receptor`,`comentarios_grupo`.`id_grupo` AS `id_grupo`,`grupos`.`nombre_grupo` AS `nombre_grupo`,`respuestas_comentarios_grupo`.`id_usuario` AS `id_emisor`,`comentarios_grupo`.`id` AS `id_post`,`respuestas_comentarios_grupo`.`id_page` AS `id_page`,`respuestas_comentarios_grupo`.`fecha_respuesta_comentario` AS `fecha`,`respuestas_comentarios_grupo`.`mencion` AS `mencion` from (((`usuarios` join `comentarios_grupo`) join `grupos`) join `respuestas_comentarios_grupo`) where ((`usuarios`.`identificador_unico` = `respuestas_comentarios_grupo`.`id_usuario`) and (`grupos`.`id` = `comentarios_grupo`.`id_grupo`) and (`respuestas_comentarios_grupo`.`id_comentario` = `comentarios_grupo`.`id`) and (`respuestas_comentarios_grupo`.`vista_respuesta_comentario` = 0)) ;
+CREATE VIEW `full_notificaciones_comentarios`  AS SELECT `respuestas_comentarios_grupo`.`id` AS `id`, `usuarios`.`foto` AS `foto`, `usuarios`.`nombre_user` AS `nombre_user`, `comentarios_grupo`.`id_usuario` AS `id_receptor`, `comentarios_grupo`.`id_grupo` AS `id_grupo`, `grupos`.`nombre_grupo` AS `nombre_grupo`, `respuestas_comentarios_grupo`.`id_usuario` AS `id_emisor`, `comentarios_grupo`.`id` AS `id_post`, `respuestas_comentarios_grupo`.`id_page` AS `id_page`, `respuestas_comentarios_grupo`.`fecha_respuesta_comentario` AS `fecha`, `respuestas_comentarios_grupo`.`mencion` AS `mencion` FROM (((`usuarios` join `comentarios_grupo`) join `grupos`) join `respuestas_comentarios_grupo`) WHERE ((`usuarios`.`identificador_unico` = `respuestas_comentarios_grupo`.`id_usuario`) AND (`grupos`.`id` = `comentarios_grupo`.`id_grupo`) AND (`respuestas_comentarios_grupo`.`id_comentario` = `comentarios_grupo`.`id`) AND (`respuestas_comentarios_grupo`.`vista_respuesta_comentario` = 0)) ;
 
 -- --------------------------------------------------------
 
@@ -441,7 +442,7 @@ CREATE VIEW `full_notificaciones_comentarios`  AS  select `respuestas_comentario
 --
 DROP TABLE IF EXISTS `full_notificaciones_grupo`;
 
-CREATE VIEW `full_notificaciones_grupo`  AS  select `notificaciones_grupo`.`id` AS `id`,`notificaciones_grupo`.`notificacion_grupo` AS `notificacion_grupo`,`notificaciones_grupo`.`fecha_notificacion_grupo` AS `fecha_notificacion_grupo`,`notificaciones_grupo`.`id_emisor` AS `id_emisor`,`notificaciones_grupo`.`id_receptor` AS `id_receptor`,`notificaciones_grupo`.`id_grupo` AS `id_grupo`,`usuarios`.`nombre_user` AS `nombre_user`,`usuarios`.`foto` AS `foto`,`grupos`.`nombre_grupo` AS `nombre_grupo` from ((`notificaciones_grupo` join `usuarios` on((`notificaciones_grupo`.`id_emisor` = `usuarios`.`identificador_unico`))) join `grupos` on((`notificaciones_grupo`.`id_grupo` = `grupos`.`id`))) ;
+CREATE VIEW `full_notificaciones_grupo`  AS SELECT `notificaciones_grupo`.`id` AS `id`, `notificaciones_grupo`.`notificacion_grupo` AS `notificacion_grupo`, `notificaciones_grupo`.`fecha_notificacion_grupo` AS `fecha_notificacion_grupo`, `notificaciones_grupo`.`id_emisor` AS `id_emisor`, `notificaciones_grupo`.`id_receptor` AS `id_receptor`, `notificaciones_grupo`.`id_grupo` AS `id_grupo`, `usuarios`.`nombre_user` AS `nombre_user`, `usuarios`.`foto` AS `foto`, `grupos`.`nombre_grupo` AS `nombre_grupo` FROM ((`notificaciones_grupo` join `usuarios` on((`notificaciones_grupo`.`id_emisor` = `usuarios`.`identificador_unico`))) join `grupos` on((`notificaciones_grupo`.`id_grupo` = `grupos`.`id`))) ;
 
 -- --------------------------------------------------------
 
@@ -450,7 +451,7 @@ CREATE VIEW `full_notificaciones_grupo`  AS  select `notificaciones_grupo`.`id` 
 --
 DROP TABLE IF EXISTS `full_notificaciones_respuestas`;
 
-CREATE VIEW `full_notificaciones_respuestas`  AS  select `usuarios`.`nombre_user` AS `nombre_user`,`usuarios`.`foto` AS `foto`,`notificaciones_respuestas_tema`.`id` AS `id`,`notificaciones_respuestas_tema`.`tipo_notificacion` AS `tipo_notificacion`,`notificaciones_respuestas_tema`.`id_emisor` AS `id_emisor`,`notificaciones_respuestas_tema`.`id_receptor` AS `id_receptor`,`notificaciones_respuestas_tema`.`notificacion_respuesta_tema` AS `notificacion_respuesta_tema`,`notificaciones_respuestas_tema`.`id_respuesta` AS `id_respuesta`,`notificaciones_respuestas_tema`.`fecha_notificacion_respuesta_tema` AS `fecha_notificacion_respuesta_tema`,`respuestas`.`id_tema` AS `id_tema`,`temas_materia_curso`.`titulo` AS `titulo` from (((`usuarios` join `notificaciones_respuestas_tema`) join `respuestas`) join `temas_materia_curso`) where ((`usuarios`.`identificador_unico` = `notificaciones_respuestas_tema`.`id_emisor`) and (`notificaciones_respuestas_tema`.`id_respuesta` = `respuestas`.`id`) and (`respuestas`.`id_tema` = `temas_materia_curso`.`id`)) ;
+CREATE VIEW `full_notificaciones_respuestas`  AS SELECT `usuarios`.`nombre_user` AS `nombre_user`, `usuarios`.`foto` AS `foto`, `notificaciones_respuestas_tema`.`id` AS `id`, `notificaciones_respuestas_tema`.`tipo_notificacion` AS `tipo_notificacion`, `notificaciones_respuestas_tema`.`id_emisor` AS `id_emisor`, `notificaciones_respuestas_tema`.`id_receptor` AS `id_receptor`, `notificaciones_respuestas_tema`.`notificacion_respuesta_tema` AS `notificacion_respuesta_tema`, `notificaciones_respuestas_tema`.`id_respuesta` AS `id_respuesta`, `notificaciones_respuestas_tema`.`fecha_notificacion_respuesta_tema` AS `fecha_notificacion_respuesta_tema`, `respuestas`.`id_tema` AS `id_tema`, `temas_materia_curso`.`titulo` AS `titulo` FROM (((`usuarios` join `notificaciones_respuestas_tema`) join `respuestas`) join `temas_materia_curso`) WHERE ((`usuarios`.`identificador_unico` = `notificaciones_respuestas_tema`.`id_emisor`) AND (`notificaciones_respuestas_tema`.`id_respuesta` = `respuestas`.`id`) AND (`respuestas`.`id_tema` = `temas_materia_curso`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -459,7 +460,7 @@ CREATE VIEW `full_notificaciones_respuestas`  AS  select `usuarios`.`nombre_user
 --
 DROP TABLE IF EXISTS `full_notificaciones_temas`;
 
-CREATE VIEW `full_notificaciones_temas`  AS  select `temas_materia_curso`.`id_usuario` AS `id_emisor`,`miembros_grupo`.`id_usuario` AS `id_receptor`,`temas_materia_curso`.`titulo` AS `titulo`,`temas_materia_curso`.`id` AS `id`,`temas_materia_curso`.`fecha_publicacion` AS `fecha_publicacion`,`temas_materia_curso`.`nivel_tema` AS `nivel_tema`,`usuarios`.`nombre_user` AS `nombre_user`,(curdate() - interval 3 day) AS `fecha_rango_limite` from (((`temas_materia_curso` join `miembros_grupo`) join `materias_cursos`) join `usuarios`) where ((`temas_materia_curso`.`id_usuario` = `usuarios`.`identificador_unico`) and (`temas_materia_curso`.`id_materia_curso` = `materias_cursos`.`id`) and (`materias_cursos`.`id_grupo` = `miembros_grupo`.`id_grupo`) and (`temas_materia_curso`.`contenido` <> '&lt;br&gt;') and (`miembros_grupo`.`acceso_grupo` = 1) and (`miembros_grupo`.`status_miembro` = 1)) ;
+CREATE VIEW `full_notificaciones_temas`  AS SELECT `temas_materia_curso`.`id_usuario` AS `id_emisor`, `miembros_grupo`.`id_usuario` AS `id_receptor`, `temas_materia_curso`.`titulo` AS `titulo`, `temas_materia_curso`.`id` AS `id`, `temas_materia_curso`.`fecha_publicacion` AS `fecha_publicacion`, `temas_materia_curso`.`nivel_tema` AS `nivel_tema`, `usuarios`.`nombre_user` AS `nombre_user`, (curdate() - interval 3 day) AS `fecha_rango_limite` FROM (((`temas_materia_curso` join `miembros_grupo`) join `materias_cursos`) join `usuarios`) WHERE ((`temas_materia_curso`.`id_usuario` = `usuarios`.`identificador_unico`) AND (`temas_materia_curso`.`id_materia_curso` = `materias_cursos`.`id`) AND (`materias_cursos`.`id_grupo` = `miembros_grupo`.`id_grupo`) AND (`temas_materia_curso`.`contenido` <> '&lt;br&gt;') AND (`miembros_grupo`.`acceso_grupo` = 1) AND (`miembros_grupo`.`status_miembro` = 1)) ;
 
 -- --------------------------------------------------------
 
@@ -468,7 +469,7 @@ CREATE VIEW `full_notificaciones_temas`  AS  select `temas_materia_curso`.`id_us
 --
 DROP TABLE IF EXISTS `full_view_puntos_grupo`;
 
-CREATE VIEW `full_view_puntos_grupo`  AS  select `respuestas`.`calificacion` AS `calificacion`,`respuestas`.`gratificaciones` AS `gratificaciones`,`materias_cursos`.`id_grupo` AS `id_grupo`,`respuestas`.`id_usuario` AS `id_usuario` from ((`respuestas` join `materias_cursos`) join `temas_materia_curso`) where ((`respuestas`.`id_tema` = `temas_materia_curso`.`id`) and (`temas_materia_curso`.`id_materia_curso` = `materias_cursos`.`id`)) ;
+CREATE VIEW `full_view_puntos_grupo`  AS SELECT `respuestas`.`calificacion` AS `calificacion`, `respuestas`.`gratificaciones` AS `gratificaciones`, `materias_cursos`.`id_grupo` AS `id_grupo`, `respuestas`.`id_usuario` AS `id_usuario` FROM ((`respuestas` join `materias_cursos`) join `temas_materia_curso`) WHERE ((`respuestas`.`id_tema` = `temas_materia_curso`.`id`) AND (`temas_materia_curso`.`id_materia_curso` = `materias_cursos`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -477,7 +478,7 @@ CREATE VIEW `full_view_puntos_grupo`  AS  select `respuestas`.`calificacion` AS 
 --
 DROP TABLE IF EXISTS `full_view_stream`;
 
-CREATE VIEW `full_view_stream`  AS  select `stream`.`id` AS `id`,`stream`.`stream_tipo` AS `stream_tipo`,`stream`.`id_grupo` AS `id_grupo`,`grupos`.`nombre_grupo` AS `nombre_grupo`,`grupos`.`theme` AS `theme`,`grupos`.`color_theme` AS `color_theme`,`usuarios`.`nombre_user` AS `nombre_user`,`usuarios`.`foto` AS `foto`,`stream`.`id_usuario` AS `id_usuario`,`stream`.`fecha_stream` AS `fecha_stream`,(select `comentarios_grupo`.`comentario` from `comentarios_grupo` where (`stream`.`id_comentario` = `comentarios_grupo`.`id`)) AS `comentario`,`stream`.`id_comentario` AS `id_comentario` from ((`grupos` join `usuarios`) join `stream`) where ((`stream`.`id_grupo` = `grupos`.`id`) and (`usuarios`.`identificador_unico` = `stream`.`id_usuario`)) ;
+CREATE VIEW `full_view_stream`  AS SELECT `stream`.`id` AS `id`, `stream`.`stream_tipo` AS `stream_tipo`, `stream`.`id_grupo` AS `id_grupo`, `grupos`.`nombre_grupo` AS `nombre_grupo`, `grupos`.`theme` AS `theme`, `grupos`.`color_theme` AS `color_theme`, `usuarios`.`nombre_user` AS `nombre_user`, `usuarios`.`foto` AS `foto`, `stream`.`id_usuario` AS `id_usuario`, `stream`.`fecha_stream` AS `fecha_stream`, (select `comentarios_grupo`.`comentario` from `comentarios_grupo` where (`stream`.`id_comentario` = `comentarios_grupo`.`id`)) AS `comentario`, `stream`.`id_comentario` AS `id_comentario` FROM ((`grupos` join `usuarios`) join `stream`) WHERE ((`stream`.`id_grupo` = `grupos`.`id`) AND (`usuarios`.`identificador_unico` = `stream`.`id_usuario`)) ;
 
 --
 -- Indexes for dumped tables
